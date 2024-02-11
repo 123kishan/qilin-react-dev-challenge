@@ -1,20 +1,22 @@
-import React from "react";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
 
-export default function App({}) {
+const App = () => {
   return (
-    <div style={styles.container}>
-      <img src={"https://i.ibb.co/B2q9y4J/temp.png"} alt='Qilin Software Lab Logo' style={styles.logo} />
-      <h1 style={styles.heading}>Welcome to Qilin Software Lab</h1>
-      <p style={styles.description}>
-        Thank you for participating in our Junior React Developer pre-assessment! Below is a simple component. Please feel free to edit this component
-        and start working on the assessment tasks.
-      </p>
-      {/* Add any additional instructions or guidance for candidates here */}
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+      </Routes>
+    </Router>
   );
-}
+};
 
-const styles = {
+export default App;
+
+/*const styles = {
   container: {
     textAlign: "center",
     marginTop: "50px",
@@ -42,4 +44,4 @@ const styles = {
     fontSmooth: "auto", // Ensure smooth fonts
     fontFamily: "sans-serif", // Use a sans-serif font
   },
-};
+};*/
